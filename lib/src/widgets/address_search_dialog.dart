@@ -178,13 +178,18 @@ class _AddressSearchDialog extends StatelessWidget {
                 // size: (size.width * 0.8) * 0.0625,
               ),
             ),
-            SizedBox(
-              width: (size.width * 0.8) * 0.72,
+            new SizedBox(
+              width: 15,
+            ),
+            Expanded(
               child: TextField(
                 controller: controller,
                 autofocus: true,
                 autocorrect: false,
-                onChanged: (val) => searchAddress,
+                onChanged: (val) {
+                  print("TEXT $val");
+                  searchAddress!();
+                },
                 textCapitalization: TextCapitalization.words,
                 cursorColor: color ?? Theme.of(context).primaryColor,
                 onEditingComplete: searchAddress,
@@ -216,17 +221,8 @@ class _AddressSearchDialog extends StatelessWidget {
                 ),
               ),
             ),
-            GestureDetector(
-              child: Padding(
-                padding: EdgeInsets.only(
-                    right: (size.width * 0.8) * 0.0425), // 0.03125
-                child: Icon(
-                  Icons.search_rounded,
-                  color: color ?? Theme.of(context).primaryColor,
-                  // size: (size.width * 0.8) * 0.0625,
-                ),
-              ),
-              onTap: searchAddress,
+            new SizedBox(
+              width: 15,
             )
           ],
         ),

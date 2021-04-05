@@ -187,7 +187,6 @@ class _AddressSearchDialog extends StatelessWidget {
                 autofocus: true,
                 autocorrect: false,
                 onChanged: (val) {
-                  print("TEXT $val");
                   searchAddress!();
                 },
                 textCapitalization: TextCapitalization.words,

@@ -184,6 +184,7 @@ class _AddressSearchDialog extends StatelessWidget {
                 controller: controller,
                 autofocus: true,
                 autocorrect: false,
+                onChanged: (val){searchAddress();},
                 textCapitalization: TextCapitalization.words,
                 cursorColor: color ?? Theme.of(context).primaryColor,
                 onEditingComplete: searchAddress,
